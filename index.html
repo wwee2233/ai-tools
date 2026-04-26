@@ -3,331 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>閿︾唬鑺卞北 - 鍙戠幇鐢熸椿涓殑缇庡ソ</title>
-    <meta name="description" content="閿︾唬鑺卞北锛屼竴涓垎浜敓娲荤編瀛︺€佽嚜鐒堕鍏夈€佷紶缁熸枃鍖栫殑缃戠珯锛屽甫浣犲彂鐜拌韩杈圭殑缇庡ソ浜嬬墿銆?>
-    <meta name="keywords" content="鑺卞北,鑷劧椋庡厜,鐢熸椿缇庡,浼犵粺鏂囧寲,鏃呮父鏀荤暐,缇庨鍒嗕韩">
+    <title>鐢熸椿缇庡鎸囧崡 - 鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</title>
+    <meta name="description" content="鐢熸椿缇庡鎸囧崡锛屽垎浜灞呰楗般€佺編椋熸枡鐞嗐€佹梾琛屾敾鐣ャ€佷釜浜烘垚闀跨瓑鐢熸椿缇庡鍐呭锛屽府鍔╀綘鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ銆?>
+    <meta name="keywords" content="鐢熸椿缇庡,瀹跺眳瑁呴グ,缇庨鏂欑悊,鏃呰鏀荤暐,涓汉鎴愰暱,鐢熸椿鎶€宸?>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             color: #333;
             line-height: 1.8;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* 椤堕儴瀵艰埅 */
         header {
-            background: rgba(255,255,255,0.95);
+            background: white;
             padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
         }
-        .logo-subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
+        .logo-subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-top: 5px; }
         nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             margin-top: 15px;
             flex-wrap: wrap;
         }
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #667eea;
-        }
+        nav a { color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #764ba2; }
         
-        /* 杞挱妯箙 */
-        .banner {
-            background: rgba(255,255,255,0.9);
+        .hero {
+            background: white;
             border-radius: 20px;
             padding: 60px 40px;
             margin: 40px auto;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        .banner h1 {
-            font-size: 2.5rem;
-            color: #764ba2;
-            margin-bottom: 20px;
-        }
-        .banner p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        .banner-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .banner-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
+        .hero h1 { font-size: 2.2rem; color: #333; margin-bottom: 15px; }
+        .hero p { font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto; }
         
-        /* 鐗硅壊鏉垮潡 */
-        .features {
+        .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             margin: 40px 0;
         }
-        .feature-card {
-            background: rgba(255,255,255,0.95);
+        .category-card {
+            background: white;
             border-radius: 15px;
             padding: 30px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        .feature-card h3 {
-            color: #764ba2;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
+        .category-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .category-card h3 { color: #333; font-size: 1.2rem; margin-bottom: 10px; }
+        .category-card p { color: #666; font-size: 0.9rem; }
         
-        /* 鍐呭鍖哄煙 */
         .content-section {
-            background: rgba(255,255,255,0.95);
+            background: white;
             border-radius: 20px;
             padding: 40px;
             margin: 40px 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
         .content-section h2 {
-            color: #764ba2;
-            font-size: 1.8rem;
+            color: #333;
+            font-size: 1.6rem;
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 3px solid #f0f0f0;
         }
         
-        /* 鏂囩珷鍒楄〃 */
-        .article-list {
+        .article-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        .article-item {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-        .article-item:hover {
-            background: #f0f0f0;
-        }
-        .article-img {
-            width: 120px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 8px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-        .article-content h4 {
-            color: #333;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-        .article-content p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .article-meta {
-            color: #999;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-        
-        /* 鏅偣鎺ㄨ崘 */
-        .spots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        .spot-card {
-            background: white;
-            border-radius: 15px;
+        .article-card {
+            background: #fafafa;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        .spot-card:hover {
-            transform: translateY(-5px);
-        }
-        .spot-img {
-            height: 150px;
+        .article-card:hover { transform: translateY(-3px); }
+        .article-thumb {
+            height: 160px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-size: 3rem;
         }
-        .spot-info {
-            padding: 20px;
-        }
-        .spot-info h4 {
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .spot-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .spot-tag {
+        .article-body { padding: 20px; }
+        .article-body h4 { color: #333; font-size: 1.1rem; margin-bottom: 10px; }
+        .article-body p { color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+        .article-meta { color: #999; font-size: 0.8rem; }
+        .article-tag {
             display: inline-block;
             background: #f0f0f0;
             color: #764ba2;
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            margin-top: 10px;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-right: 8px;
         }
         
-        /* 缇庨鎺ㄨ崘 */
-        .food-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .food-item {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-        .food-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            flex-shrink: 0;
-        }
-        .food-info h4 {
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .food-info p {
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        /* 瀹炵敤淇℃伅 */
-        .info-box {
-            background: #f9f9f9;
-            border-left: 4px solid #764ba2;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 0 10px 10px 0;
-        }
-        .info-box h4 {
-            color: #764ba2;
+        .tips-list { list-style: none; }
+        .tips-list li {
+            padding: 15px;
+            background: #fafafa;
             margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
         }
-        .info-box ul {
-            list-style: none;
-            color: #666;
-        }
-        .info-box li {
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        .info-box li:before {
-            content: "鈥?;
-            color: #764ba2;
-            position: absolute;
-            left: 0;
-        }
+        .tips-list li strong { color: #764ba2; }
         
-        /* 椤佃剼 */
+        .cta-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-box h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #764ba2;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+        
         footer {
-            background: rgba(255,255,255,0.95);
+            background: white;
             padding: 40px 20px;
             margin-top: 60px;
             text-align: center;
         }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-        }
-        .footer-links a:hover {
-            color: #764ba2;
-        }
-        .copyright {
-            color: #999;
-            font-size: 0.85rem;
-        }
+        .footer-nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
+        .footer-nav a { color: #666; text-decoration: none; }
+        .footer-nav a:hover { color: #764ba2; }
+        .copyright { color: #999; font-size: 0.85rem; }
         
-        /* 鍝嶅簲寮?*/
         @media (max-width: 768px) {
-            .banner h1 { font-size: 1.8rem; }
-            .banner { padding: 40px 20px; }
-            .article-item { flex-direction: column; }
-            .article-img { width: 100%; height: 120px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero { padding: 40px 20px; }
             nav { gap: 15px; }
         }
     </style>
@@ -335,255 +179,180 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">馃彅锔?閿︾唬鑺卞北</div>
-            <div class="logo-subtitle">鍙戠幇鐢熸椿涓殑缇庡ソ</div>
+            <div class="logo">鉁?鐢熸椿缇庡鎸囧崡</div>
+            <div class="logo-subtitle">鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</div>
             <nav>
                 <a href="#home">棣栭〉</a>
-                <a href="#spots">鏅偣鎺ㄨ崘</a>
-                <a href="#food">缇庨鏀荤暐</a>
-                <a href="#culture">鏂囧寲鏁呬簨</a>
-                <a href="#tips">瀹炵敤淇℃伅</a>
+                <a href="#home">瀹跺眳鐢熸椿</a>
+                <a href="#food">缇庨鏂欑悊</a>
+                <a href="#travel">鏃呰鏀荤暐</a>
+                <a href="#growth">涓汉鎴愰暱</a>
+                <a href="#tips">鐢熸椿鎶€宸?/a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <!-- 涓绘í骞?-->
-        <section class="banner" id="home">
-            <h1>娆㈣繋鏉ュ埌閿︾唬鑺卞北</h1>
-            <p>杩欓噷鏈夋渶缇庣殑鑷劧椋庡厜銆佹渶鍦伴亾鐨勭編椋熴€佹渶鍔ㄤ汉鐨勬枃鍖栨晠浜嬨€傝鎴戜滑涓€璧锋帰绱㈣繖鐗囩濂囩殑鍦熷湴锛屽彂鐜拌韩杈圭殑缇庡ソ銆?/p>
-            <a href="#spots" class="banner-btn">寮€濮嬫帰绱?/a>
+        <section class="hero">
+            <h1>璁╃敓娲诲彉寰楁洿缇庡ソ</h1>
+            <p>鍒嗕韩瀹炵敤鐨勫灞呭竷缃€佺編椋熼璋便€佹梾琛屾敾鐣ュ拰涓汉鎴愰暱蹇冨緱锛屽府鍔╀綘鍦ㄦ棩甯哥敓娲讳腑鍙戠幇缇庛€佸垱閫犵編銆佷韩鍙楃編銆?/p>
         </section>
 
-        <!-- 鐗硅壊鏉垮潡 -->
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">馃尭</div>
-                <h3>鍥涘鑺辨捣</h3>
-                <p>鏄ユ湁妯辫姳鐑傛极锛屽鏈夎嵎鑺变涵浜紝绉嬫湁妗傝姳椋橀锛屽啲鏈夋鑺卞偛闆€備竴骞村洓瀛ｏ紝鑺卞紑涓嶆柇銆?/p>
+        <section class="categories">
+            <div class="category-card">
+                <div class="category-icon">馃彔</div>
+                <h3>瀹跺眳鐢熸椿</h3>
+                <p>鎴块棿甯冪疆銆佹敹绾虫暣鐞嗐€佸灞呰楗帮紝璁╀綘鐨勫鏇存俯棣ㄨ垝閫傘€?/p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">馃彏锔?/div>
-                <h3>灞辨按鐢诲嵎</h3>
-                <p>闈掑北缁挎按锛屼簯闆剧辑缁曘€傜櫥涓婂北椤惰繙鐪猴紝鏁翠釜鍩庡競灏芥敹鐪煎簳锛岀編寰楀儚涓€骞呯敾銆?/p>
+            <div class="category-card">
+                <div class="category-icon">馃嵆</div>
+                <h3>缇庨鏂欑悊</h3>
+                <p>绠€鍗曟槗瀛︾殑瀹跺父鑿溿€佺儤鐒欑敎鐐广€佸仴搴烽ギ椋燂紝璁╁仛楗彉鎴愪韩鍙椼€?/p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">馃崪</div>
-                <h3>鐗硅壊缇庨</h3>
-                <p>鍐滃鍦熻彍銆佸北閲庡皬鍚冦€佷紶缁熺硶鐐癸紝姣忎竴鏍烽兘鏄蹇嗕腑鐨勫懗閬擄紝璁╀汉鍥炲懗鏃犵┓銆?/p>
+            <div class="category-card">
+                <div class="category-icon">鉁堬笍</div>
+                <h3>鏃呰鏀荤暐</h3>
+                <p>鍥藉唴鏃呰鎺ㄨ崘銆佸皬浼楃洰鐨勫湴銆佹梾琛岀渷閽辨妧宸э紝璇磋蛋灏辫蛋銆?/p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">馃幁</div>
-                <h3>姘戜織鏂囧寲</h3>
-                <p>鍙よ€佺殑浼犵粺鍦ㄨ繖閲屽欢缁紝姘戦棿鑹烘湳浠ｄ唬鐩镐紶锛屾劅鍙楁渶鐪熷疄鐨勬枃鍖栭瓍鍔涖€?/p>
+            <div class="category-card">
+                <div class="category-icon">馃摎</div>
+                <h3>涓汉鎴愰暱</h3>
+                <p>璇讳功绗旇銆佹椂闂寸鐞嗐€佽嚜鎴戞彁鍗囷紝閬囪鏇村ソ鐨勮嚜宸便€?/p>
             </div>
         </section>
 
-        <!-- 鏅偣鎺ㄨ崘 -->
-        <section class="content-section" id="spots">
-            <h2>馃幆 蹇呭幓鏅偣鎺ㄨ崘</h2>
-            <div class="spots-grid">
-                <div class="spot-card">
-                    <div class="spot-img">馃尭</div>
-                    <div class="spot-info">
-                        <h4>妯辫姳璋?/h4>
-                        <p>姣忓勾涓夊洓鏈堬紝涓婁竾鏍ū鑺卞悓鏃剁唤鏀撅紝绮夌櫧鑹茬殑鑺辨捣缇庝笉鑳滄敹锛屾槸鎷嶇収鎵撳崱鐨勭粷浣冲湴鐐广€?/p>
-                        <span class="spot-tag">鏄ュ鎺ㄨ崘</span>
-                    </div>
-                </div>
-                <div class="spot-card">
-                    <div class="spot-img">馃寠</div>
-                    <div class="spot-info">
-                        <h4>缈犳箹</h4>
-                        <p>婀栨按娓呮緢瑙佸簳锛屽懆鍥撮潚灞辩幆缁曘€傚彲浠ュ垝鑸广€侀挀楸硷紝鎴栬€呮部鐫€婀栬竟灏忚矾鏁ｆ锛岄潪甯告儸鎰忋€?/p>
-                        <span class="spot-tag">鍏ㄥ勾寮€鏀?/span>
-                    </div>
-                </div>
-                <div class="spot-card">
-                    <div class="spot-img">鉀帮笍</div>
-                    <div class="spot-info">
-                        <h4>鏈涗簯宄?/h4>
-                        <p>鑺卞北鏈€楂樺嘲锛屾捣鎷旂害800绫炽€傜埇灞辩害闇€2灏忔椂锛屽北椤跺彲淇灠鏁翠釜鍩庡競锛屾棩鍑烘棩钀介兘鐗瑰埆缇庛€?/p>
-                        <span class="spot-tag">鐧诲北瑙傛櫙</span>
-                    </div>
-                </div>
-                <div class="spot-card">
-                    <div class="spot-img">馃彌锔?/div>
-                    <div class="spot-info">
-                        <h4>鍙ゅ搴?/h4>
-                        <p>寤轰簬鏄庝唬鐨勫彜瀵猴紝棣欑伀榧庣洓銆傚鍐呭彜鏍戝弬澶╋紝鐜娓呭菇锛屾槸绁堢鍜岄潤蹇冪殑濂藉湴鏂广€?/p>
-                        <span class="spot-tag">鏂囧寲鍙よ抗</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 缇庨鏀荤暐 -->
         <section class="content-section" id="food">
-            <h2>馃嵈 蹇呭悆缇庨鏀荤暐</h2>
-            <div class="food-list">
-                <div class="food-item">
-                    <div class="food-icon">馃</div>
-                    <div class="food-info">
-                        <h4>鍐滃鍦熼浮</h4>
-                        <p>鏁ｅ吇鐨勮蛋鍦伴浮锛岃倝璐ㄩ矞瀚╋紝閰嶄笂褰撳湴鐗规湁鐨勫仛娉曪紝棣欒€屼笉鑵伙紝鏄繖閲岀殑鎷涚墝鑿溿€?/p>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <div class="food-icon">馃ガ</div>
-                    <div class="food-info">
-                        <h4>灞遍噹鑿?/h4>
-                        <p>浠庡北閲岄噰鎽樼殑鏂伴矞閲庤彍锛岀函澶╃劧鏃犳薄鏌擄紝绠€鍗曟竻鐐掑氨寰堢編鍛筹紝鍩庨噷寰堥毦鍚冨埌銆?/p>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <div class="food-icon">馃悷</div>
-                    <div class="food-info">
-                        <h4>缈犳箹椴滈奔</h4>
-                        <p>缈犳箹閲屽吇鐨勯奔锛岀幇鎹炵幇鍋氾紝鑲夎川缁嗗锛屾棤璁烘槸娓呰捀杩樻槸绾㈢儳閮介潪甯搁矞缇庛€?/p>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <div class="food-icon">馃</div>
-                    <div class="food-info">
-                        <h4>鎵嬪伐璞嗚厫</h4>
-                        <p>鐢ㄥ北娉夋按鍋氱殑璞嗚厫锛屽彛鎰熺壒鍒粏鑵伙紝閰嶄笂鐗瑰埗鐨勮樃鏂欙紝绠€鍗曞嵈璁╀汉闅惧繕銆?/p>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <div class="food-icon">馃嵃</div>
-                    <div class="food-info">
-                        <h4>妗傝姳绯?/h4>
-                        <p>鐢ㄧ澶╅噰鎽樼殑妗傝姳鍒朵綔锛岄鐢滆蒋绯紝甯︾潃娣℃贰鐨勮姳棣欙紝鏄繖閲岀殑鐗硅壊鐐瑰績銆?/p>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <div class="food-icon">馃嵉</div>
-                    <div class="food-info">
-                        <h4>灞辨硥鑼?/h4>
-                        <p>褰撳湴浜х殑缁胯尪锛岀敤灞辨硥姘村啿娉★紝娓呴鎵戦蓟锛屽枬涓€鍙ｇ娓呮皵鐖姐€?/p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 鏂囧寲鏁呬簨 -->
-        <section class="content-section" id="culture">
-            <h2>馃摐 鏂囧寲鏁呬簨</h2>
-            <div class="article-list">
-                <article class="article-item">
-                    <div class="article-img">馃摉</div>
-                    <div class="article-content">
-                        <h4>鑺卞北鍚嶅瓧鐨勭敱鏉?/h4>
-                        <p>浼犺寰堜箙浠ュ墠锛岃繖閲屾槸涓€鐗囪崚灞便€備竴浣嶄粰濂宠矾杩囷紝琚繖閲岀殑灞辨按鍚稿紩锛屼究鎾掍笅涓€鎶婅姳绉嶃€備粠姝や互鍚庯紝杩欓噷鍥涘鑺卞紑涓嶆柇锛屼汉浠究绉板畠涓?鑺卞北"銆?/p>
-                        <div class="article-meta">姘戦棿浼犺 路 娴佷紶宸蹭箙</div>
+            <h2>馃嵆 鐑棬缇庨椋熻氨</h2>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-thumb">馃崫</div>
+                    <div class="article-body">
+                        <span class="article-tag">蹇墜鑿?/span>
+                        <span class="article-tag">20鍒嗛挓</span>
+                        <h4>鐣寗鐐掕泲鐨勬纭仛娉?/h4>
+                        <p>鎺屾彙杩欏嚑涓皬鎶€宸э紝鍋氬嚭鐨勭暘鑼勭倰铔嬮吀鐢滃彲鍙ｏ紝铔嬪姹佹祿锛屾瘮楗簵杩樺ソ鍚冦€?/p>
+                        <div class="article-meta">闃呰閲?1.2涓?路 鐐硅禐 856</div>
                     </div>
                 </article>
-                <article class="article-item">
-                    <div class="article-img">馃幁</div>
-                    <div class="article-content">
-                        <h4>鍙よ€佺殑搴欎細浼犵粺</h4>
-                        <p>姣忓勾鍐滃巻涓夋湀涓夛紝杩欓噷閮戒細涓惧姙鐩涘ぇ鐨勫簷浼氥€傚懆杈圭殑鏉戞皯閮戒細鏉ヨ刀闆嗐€佺湅鎴忋€佺绂忥紝杩欎釜浼犵粺宸茬粡寤剁画浜嗗嚑鐧惧勾锛岃嚦浠婁緷鐒剁儹闂广€?/p>
-                        <div class="article-meta">姘戜織娲诲姩 路 姣忓勾涓夋湀涓?/div>
+                <article class="article-card">
+                    <div class="article-thumb">馃</div>
+                    <div class="article-body">
+                        <span class="article-tag">鍋ュ悍椁?/span>
+                        <span class="article-tag">浣庡崱</span>
+                        <h4>涓€鍛ㄥ噺鑴傞椋熻氨鍒嗕韩</h4>
+                        <p>涓冨ぉ涓嶉噸鏍风殑浣庡崱椋熻氨锛岃惀鍏诲潎琛″張濂藉悆锛屽府浣犺交鏉炬帶鍒朵綋閲嶃€?/p>
+                        <div class="article-meta">闃呰閲?9800 路 鐐硅禐 723</div>
                     </div>
                 </article>
-                <article class="article-item">
-                    <div class="article-img">馃帹</div>
-                    <div class="article-content">
-                        <h4>姘戦棿鎵嬪伐鑹轰汉</h4>
-                        <p>杩欓噷杩樹繚鐣欑潃浼犵粺鎵嬪伐鑹猴紝鏈夊仛绔圭紪鐨勮€佷汉銆佸壀绾哥殑澶у銆佺紪鑽夐瀷鐨勫笀鍌呫€傝繖浜涙墜鑹轰唬浠ｇ浉浼狅紝瑙佽瘉浜嗗瞾鏈堢殑鍙樿縼銆?/p>
-                        <div class="article-meta">浼犵粺鎶€鑹?路 鍊煎緱涓€鐪?/div>
+                <article class="article-card">
+                    <div class="article-thumb">馃嵃</div>
+                    <div class="article-body">
+                        <span class="article-tag">鐑樼剻</span>
+                        <span class="article-tag">鏂版墜鍙嬪ソ</span>
+                        <h4>闆跺け璐ユ垰椋庤泲绯曟暀绋?/h4>
+                        <p>璇︾粏姝ラ鍥捐В锛屼粠鏉愭枡鍑嗗鍒扮儰绠辨俯搴︼紝鎵嬫妸鎵嬫暀浣犲仛鍑哄畬缇庢垰椋庛€?/p>
+                        <div class="article-meta">闃呰閲?6500 路 鐐硅禐 512</div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- 瀹炵敤淇℃伅 -->
+        <section class="content-section" id="travel">
+            <h2>鉁堬笍 鏃呰鏀荤暐鎺ㄨ崘</h2>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-thumb">馃彅锔?/div>
+                    <div class="article-body">
+                        <span class="article-tag">鍥藉唴娓?/span>
+                        <span class="article-tag">灏忎紬</span>
+                        <h4>浜戝崡灏忎紬鍙ら晣涓夋棩娓?/h4>
+                        <p>閬垮紑浜烘疆锛屾帰绱簯鍗楅偅浜涗綆璋冨張缇庝附鐨勫彜闀囷紝鎰熷彈鍘熸眮鍘熷懗鐨勬參鐢熸椿銆?/p>
+                        <div class="article-meta">闃呰閲?8500 路 鐐硅禐 634</div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-thumb">馃彇锔?/div>
+                    <div class="article-body">
+                        <span class="article-tag">娴疯竟</span>
+                        <span class="article-tag">澶忓</span>
+                        <h4>鍥藉唴鏈€缇庢捣宀涙帹鑽?/h4>
+                        <p>鐩樼偣鍥藉唴閭ｄ簺姘磋川娓呮緢銆佹矙婊╃粏鑵荤殑灏忎紬娴峰矝锛屽澶╁氨鍘昏繖閲岋紒</p>
+                        <div class="article-meta">闃呰閲?1.1涓?路 鐐硅禐 892</div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-thumb">馃挵</div>
+                    <div class="article-body">
+                        <span class="article-tag">鐪侀挶鏀荤暐</span>
+                        <span class="article-tag">瀹炵敤</span>
+                        <h4>鏃呰鐪侀挶鍗佸ぇ鎶€宸?/h4>
+                        <p>鏈虹エ浣忓鎬庝箞璁㈡渶渚垮疁锛熸€庝箞鐢ㄦ渶灏戠殑閽辩帺寰楁渶寮€蹇冿紵杩欑瘒鏂囩珷鍛婅瘔浣犵瓟妗堛€?/p>
+                        <div class="article-meta">闃呰閲?1.5涓?路 鐐硅禐 1205</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" id="growth">
+            <h2>馃摎 涓汉鎴愰暱蹇冨緱</h2>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-thumb">馃摉</div>
+                    <div class="article-body">
+                        <span class="article-tag">璇讳功</span>
+                        <h4>2026骞翠功鍗曟帹鑽?/h4>
+                        <p>绮鹃€?0鏈敼鍙樻垜浜虹敓鐨勫ソ涔︼紝娑电洊蹇冪悊瀛︺€佺粡娴庡銆佷紶璁扮瓑澶氫釜棰嗗煙銆?/p>
+                        <div class="article-meta">闃呰閲?7200 路 鐐硅禐 567</div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-thumb">鈴?/div>
+                    <div class="article-body">
+                        <span class="article-tag">鏃堕棿绠＄悊</span>
+                        <h4>濡備綍楂樻晥鍒╃敤鏃堕棿</h4>
+                        <p>鍒嗕韩鎴戠敤浜嗕笁骞寸殑鏃堕棿绠＄悊鏂规硶锛屾瘡澶╁鍑?灏忔椂鍋氳嚜宸卞枩娆㈢殑浜嬨€?/p>
+                        <div class="article-meta">闃呰閲?9300 路 鐐硅禐 756</div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-thumb">馃幆</div>
+                    <div class="article-body">
+                        <span class="article-tag">涔犳儻鍏绘垚</span>
+                        <h4>鍧氭寔鏃╄捣涓€骞寸殑鍙樺寲</h4>
+                        <p>浠庣潯鎳掕鍒版瘡澶?鐐硅捣搴婏紝鎴戠粡鍘嗕簡浠€涔堬紵鏃╄捣甯︽潵鐨勬敼鍙樿繙姣斾綘鎯宠薄鐨勫ぇ銆?/p>
+                        <div class="article-meta">闃呰閲?6800 路 鐐硅禐 534</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section class="content-section" id="tips">
-            <h2>馃挕 瀹炵敤淇℃伅</h2>
-            
-            <div class="info-box">
-                <h4>馃殫 浜ら€氭寚鍗?/h4>
-                <ul>
-                    <li>鑷┚锛氬鑸悳绱?鑺卞北椋庢櫙鍖?锛屾湁鍏嶈垂鍋滆溅鍦?/li>
-                    <li>鍏氦锛氫箻鍧?01璺叕浜よ溅锛岀粓鐐圭珯涓嬭溅鍗冲埌</li>
-                    <li>鎵撹溅锛氫粠甯傚尯绾?0鍒嗛挓锛岃垂鐢ㄧ害40鍏?/li>
-                </ul>
-            </div>
-            
-            <div class="info-box">
-                <h4>鈴?寮€鏀炬椂闂?/h4>
-                <ul>
-                    <li>鏅尯寮€鏀撅細鏃╀笂8:00 - 涓嬪崍18:00</li>
-                    <li>鏈€浣虫父瑙堟椂闂达細3-5鏈堬紙璧忚姳锛夈€?-11鏈堬紙鐧诲北锛?/li>
-                    <li>寤鸿娓歌鏃堕暱锛氬崐澶╁埌涓€澶?/li>
-                </ul>
-            </div>
-            
-            <div class="info-box">
-                <h4>馃挵 璐圭敤鍙傝€?/h4>
-                <ul>
-                    <li>鏅尯闂ㄧエ锛氬厤璐?/li>
-                    <li>鍋滆溅璐癸細鍏嶈垂</li>
-                    <li>鍒掕埞锛?0鍏?灏忔椂</li>
-                    <li>椁愰ギ锛氬啘瀹朵箰浜哄潎绾?0-80鍏?/li>
-                </ul>
-            </div>
-            
-            <div class="info-box">
-                <h4>馃帓 娓哥帺寤鸿</h4>
-                <ul>
-                    <li>绌胯垝閫傜殑闉嬪瓙锛屽北璺緝澶?/li>
-                    <li>甯﹀ソ闃叉檼鐢ㄥ搧鍜岄ギ鐢ㄦ按</li>
-                    <li>鍙互甯︿簺闈㈠寘鍠傛箹閲岀殑楸?/li>
-                    <li>鎯崇湅鏃ュ嚭鐨勮瘽锛屽缓璁棭涓?鐐瑰乏鍙充笂灞?/li>
-                </ul>
-            </div>
+            <h2>馃挕 瀹炵敤鐢熸椿鎶€宸?/h2>
+            <ul class="tips-list">
+                <li><strong>鍐扮鏀剁撼锛?/strong>鐢ㄩ€忔槑淇濋矞鐩掑垎绫诲瓨鏀撅紝璐翠笂鏃ユ湡鏍囩锛屽啀涔熶笉鎬曢鏉愯繃鏈熸氮璐广€?/li>
+                <li><strong>琛ｆ湇鍘绘笉锛?/strong>琛ｆ湇娌句笂娌规笉锛岀珛鍒荤敤娲楁磥绮炬秱鎶归潤缃?鍒嗛挓锛屽啀姝ｅ父娓呮礂鍗冲彲鍘婚櫎銆?/li>
+                <li><strong>鍘婚櫎寮傚懗锛?/strong>鍐扮鏈夊紓鍛筹紵鏀句竴纰楀皬鑻忔墦鎴栧挅鍟℃福锛?4灏忔椂鍚庡紓鍛冲叏鏃犮€?/li>
+                <li><strong>蹇€熻В鍐伙細</strong>鑲夌被鐢ㄤ繚椴滆瀵嗗皝锛屾场鍦ㄥ喎姘翠腑锛?0鍒嗛挓灏辫兘瑙ｅ喕锛屾瘮寰尝鐐夋洿濂姐€?/li>
+                <li><strong>鎵嬫満鐪佺數锛?/strong>鍏抽棴鍚庡彴鍒锋柊銆侀檷浣庡睆骞曚寒搴︺€佸紑鍚渷鐢垫ā寮忥紝缁埅鎻愬崌50%銆?/li>
+            </ul>
         </section>
 
-        <!-- 鍛ㄨ竟鎺ㄨ崘 -->
-        <section class="content-section">
-            <h2>馃椇锔?鍛ㄨ竟娓哥帺</h2>
-            <div class="spots-grid">
-                <div class="spot-card">
-                    <div class="spot-img">馃彆锔?/div>
-                    <div class="spot-info">
-                        <h4>妫灄闇茶惀鍦?/h4>
-                        <p>璺濈鏅尯绾?鍏噷锛屽彲浠ユ惌甯愮銆佺儳鐑ゃ€佺湅鏄熸槦锛岄€傚悎鍛ㄦ湯瀹跺涵鍑烘父銆?/p>
-                        <span class="spot-tag">璺濈5鍏噷</span>
-                    </div>
-                </div>
-                <div class="spot-card">
-                    <div class="spot-img">馃崌</div>
-                    <div class="spot-info">
-                        <h4>鐢熸€佹灉鍥?/h4>
-                        <p>涓嶅悓瀛ｈ妭鏈変笉鍚岀殑姘存灉鍙互閲囨憳锛岃崏鑾撱€佽憽钀勩€佹瀛愶紝浣撻獙鍐滀簨涔愯叮銆?/p>
-                        <span class="spot-tag">閲囨憳浣撻獙</span>
-                    </div>
-                </div>
-                <div class="spot-card">
-                    <div class="spot-img">馃洡锔?/div>
-                    <div class="spot-info">
-                        <h4>鍙ら┛閬?/h4>
-                        <p>淇濆瓨瀹屽ソ鐨勫彜浠ｉ┛閬擄紝鐭虫澘璺袱鏃佹槸鍙よ€佺殑鏉戝簞锛屼豢浣涚┛瓒婂洖浠庡墠銆?/p>
-                        <span class="spot-tag">鍘嗗彶鏂囧寲</span>
-                    </div>
-                </div>
-            </div>
+        <section class="cta-box">
+            <h3>鍠滄杩欎簺鍐呭鍚楋紵</h3>
+            <p>鍏虫敞鎴戜滑锛屾瘡鍛ㄦ洿鏂板疄鐢ㄧ殑鐢熸椿鎸囧崡锛屼竴璧疯鐢熸椿鍙樺緱鏇寸編濂姐€?/p>
+            <a href="#" class="cta-btn">浜嗚В鏇村</a>
         </section>
     </div>
 
     <footer>
-        <div class="footer-links">
-            <a href="#home">棣栭〉</a>
-            <a href="#spots">鏅偣鎺ㄨ崘</a>
-            <a href="#food">缇庨鏀荤暐</a>
-            <a href="#culture">鏂囧寲鏁呬簨</a>
-            <a href="#tips">瀹炵敤淇℃伅</a>
+        <div class="footer-nav">
+            <a href="#">鍏充簬鎴戜滑</a>
+            <a href="#">鑱旂郴鏂瑰紡</a>
+            <a href="#">闅愮鏀跨瓥</a>
+            <a href="#">浣跨敤鏉℃</a>
         </div>
         <div class="copyright">
-            <p>漏 2026 閿︾唬鑺卞北 路 鍙戠幇鐢熸椿涓殑缇庡ソ</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">鏈珯鍐呭浠呬緵鍙傝€冿紝鍏蜂綋淇℃伅浠ュ疄鍦颁负鍑?/p>
+            <p>漏 2026 鐢熸椿缇庡鎸囧崡 路 鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</p>
         </div>
     </footer>
 </body>
