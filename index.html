@@ -1,177 +1,190 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鐢熸椿缇庡鎸囧崡 - 鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</title>
-    <meta name="description" content="鐢熸椿缇庡鎸囧崡锛屽垎浜灞呰楗般€佺編椋熸枡鐞嗐€佹梾琛屾敾鐣ャ€佷釜浜烘垚闀跨瓑鐢熸椿缇庡鍐呭锛屽府鍔╀綘鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ銆?>
-    <meta name="keywords" content="鐢熸椿缇庡,瀹跺眳瑁呴グ,缇庨鏂欑悊,鏃呰鏀荤暐,涓汉鎴愰暱,鐢熸椿鎶€宸?>
+    <title>LifeWise Guide - Practical Tips for Better Living</title>
+    <meta name="description" content="Discover practical tips for home improvement, cooking, travel, personal growth, and everyday life. Make your life easier and more enjoyable.">
+    <meta name="keywords" content="life tips, home improvement, cooking recipes, travel guide, personal development, productivity, healthy living">
+    <link rel="canonical" href="https://wwee2233.github.io/ai-tools/">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
             color: #333;
-            line-height: 1.8;
+            line-height: 1.7;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
+        /* Header */
         header {
             background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-        .logo-subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-top: 5px; }
-        nav {
+        .header-content {
             display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 15px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        nav a { color: #666; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: #764ba2; }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        nav { display: flex; gap: 25px; flex-wrap: wrap; }
+        nav a { color: #555; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: #2563eb; }
         
+        /* Hero */
         .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 40px auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        .hero h1 { font-size: 2.2rem; color: #333; margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
+        .hero p { font-size: 1.2rem; opacity: 0.95; max-width: 600px; margin: 0 auto; }
         
+        /* Categories */
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 50px 0;
         }
-        .category-card {
+        .cat-card {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
         }
-        .category-card:hover {
+        .cat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-        .category-icon { font-size: 2.5rem; margin-bottom: 15px; }
-        .category-card h3 { color: #333; font-size: 1.2rem; margin-bottom: 10px; }
-        .category-card p { color: #666; font-size: 0.9rem; }
+        .cat-icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .cat-card h3 { font-size: 1.1rem; color: #333; margin-bottom: 8px; }
+        .cat-card p { color: #666; font-size: 0.9rem; }
         
-        .content-section {
+        /* Section */
+        .section {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            padding: 60px 0;
+            margin-bottom: 30px;
         }
-        .content-section h2 {
-            color: #333;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
+        .section-title {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #f0f0f0;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
         }
         
+        /* Article Grid */
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
-        .article-card {
+        .article {
             background: #fafafa;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s;
         }
-        .article-card:hover { transform: translateY(-3px); }
-        .article-thumb {
-            height: 160px;
+        .article:hover { transform: translateY(-3px); }
+        .article-img {
+            height: 180px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
         }
-        .article-body { padding: 20px; }
-        .article-body h4 { color: #333; font-size: 1.1rem; margin-bottom: 10px; }
-        .article-body p { color: #666; font-size: 0.9rem; margin-bottom: 10px; }
-        .article-meta { color: #999; font-size: 0.8rem; }
+        .article-content { padding: 20px; }
         .article-tag {
             display: inline-block;
-            background: #f0f0f0;
-            color: #764ba2;
-            padding: 3px 12px;
-            border-radius: 12px;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 10px;
+            border-radius: 15px;
             font-size: 0.75rem;
-            margin-right: 8px;
+            margin-right: 6px;
+            margin-bottom: 8px;
         }
+        .article h4 { font-size: 1.05rem; color: #222; margin-bottom: 10px; line-height: 1.4; }
+        .article p { color: #666; font-size: 0.9rem; margin-bottom: 12px; }
+        .article-meta { color: #999; font-size: 0.8rem; }
         
-        .tips-list { list-style: none; }
-        .tips-list li {
-            padding: 15px;
-            background: #fafafa;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
+        /* Tips List */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
-        .tips-list li strong { color: #764ba2; }
+        .tip-item {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        .tip-item h4 { color: #1e40af; font-size: 1rem; margin-bottom: 8px; }
+        .tip-item p { color: #555; font-size: 0.9rem; }
         
-        .cta-box {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
             color: white;
-            padding: 40px;
-            border-radius: 20px;
+            padding: 60px 20px;
             text-align: center;
+            border-radius: 20px;
             margin: 40px 0;
         }
-        .cta-box h3 { font-size: 1.5rem; margin-bottom: 15px; }
-        .cta-box p { opacity: 0.9; margin-bottom: 20px; }
+        .cta h2 { font-size: 2rem; margin-bottom: 15px; }
+        .cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 25px; }
         .cta-btn {
             display: inline-block;
             background: white;
-            color: #764ba2;
-            padding: 12px 30px;
-            border-radius: 25px;
+            color: #1e40af;
+            padding: 14px 35px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s;
         }
         .cta-btn:hover { transform: scale(1.05); }
         
+        /* Footer */
         footer {
-            background: white;
-            padding: 40px 20px;
-            margin-top: 60px;
-            text-align: center;
+            background: #1f2937;
+            color: #9ca3af;
+            padding: 50px 20px 30px;
         }
-        .footer-nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
-        .footer-nav a { color: #666; text-decoration: none; }
-        .footer-nav a:hover { color: #764ba2; }
-        .copyright { color: #999; font-size: 0.85rem; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 { color: white; font-size: 1rem; margin-bottom: 15px; }
+        .footer-col a { display: block; color: #9ca3af; text-decoration: none; padding: 5px 0; font-size: 0.9rem; }
+        .footer-col a:hover { color: white; }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid #374151; font-size: 0.85rem; }
         
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.6rem; }
-            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero { padding: 50px 20px; }
+            .header-content { flex-direction: column; gap: 15px; }
             nav { gap: 15px; }
         }
     </style>
@@ -179,180 +192,420 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">鉁?鐢熸椿缇庡鎸囧崡</div>
-            <div class="logo-subtitle">鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</div>
-            <nav>
-                <a href="#home">棣栭〉</a>
-                <a href="#home">瀹跺眳鐢熸椿</a>
-                <a href="#food">缇庨鏂欑悊</a>
-                <a href="#travel">鏃呰鏀荤暐</a>
-                <a href="#growth">涓汉鎴愰暱</a>
-                <a href="#tips">鐢熸椿鎶€宸?/a>
-            </nav>
+            <div class="header-content">
+                <a href="#" class="logo">🌟 LifeWise Guide</a>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#cooking">Cooking</a>
+                    <a href="#travel">Travel</a>
+                    <a href="#home-tips">Home Tips</a>
+                    <a href="#wellness">Wellness</a>
+                    <a href="#tech">Tech Tips</a>
+                </nav>
+            </div>
         </div>
     </header>
 
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Practical Tips for Better Living</h1>
+            <p>Discover simple ways to improve your daily life - from cooking and travel to productivity and wellness.</p>
+        </div>
+    </section>
+
     <div class="container">
-        <section class="hero">
-            <h1>璁╃敓娲诲彉寰楁洿缇庡ソ</h1>
-            <p>鍒嗕韩瀹炵敤鐨勫灞呭竷缃€佺編椋熼璋便€佹梾琛屾敾鐣ュ拰涓汉鎴愰暱蹇冨緱锛屽府鍔╀綘鍦ㄦ棩甯哥敓娲讳腑鍙戠幇缇庛€佸垱閫犵編銆佷韩鍙楃編銆?/p>
-        </section>
+        <div class="categories">
+            <div class="cat-card">
+                <div class="cat-icon">🍳</div>
+                <h3>Cooking & Recipes</h3>
+                <p>Easy recipes and kitchen tips for home cooks</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">✈️</div>
+                <h3>Travel Guides</h3>
+                <p>Destinations, tips, and budget travel advice</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🏠</div>
+                <h3>Home & Living</h3>
+                <p>Organization, decor, and home improvement</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">💪</div>
+                <h3>Wellness</h3>
+                <p>Health, fitness, and mental well-being</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">📱</div>
+                <h3>Tech Tips</h3>
+                <p>Smartphone tricks, apps, and digital life</p>
+            </div>
+        </div>
+    </div>
 
-        <section class="categories">
-            <div class="category-card">
-                <div class="category-icon">馃彔</div>
-                <h3>瀹跺眳鐢熸椿</h3>
-                <p>鎴块棿甯冪疆銆佹敹绾虫暣鐞嗐€佸灞呰楗帮紝璁╀綘鐨勫鏇存俯棣ㄨ垝閫傘€?/p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">馃嵆</div>
-                <h3>缇庨鏂欑悊</h3>
-                <p>绠€鍗曟槗瀛︾殑瀹跺父鑿溿€佺儤鐒欑敎鐐广€佸仴搴烽ギ椋燂紝璁╁仛楗彉鎴愪韩鍙椼€?/p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">鉁堬笍</div>
-                <h3>鏃呰鏀荤暐</h3>
-                <p>鍥藉唴鏃呰鎺ㄨ崘銆佸皬浼楃洰鐨勫湴銆佹梾琛岀渷閽辨妧宸э紝璇磋蛋灏辫蛋銆?/p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">馃摎</div>
-                <h3>涓汉鎴愰暱</h3>
-                <p>璇讳功绗旇銆佹椂闂寸鐞嗐€佽嚜鎴戞彁鍗囷紝閬囪鏇村ソ鐨勮嚜宸便€?/p>
-            </div>
-        </section>
-
-        <section class="content-section" id="food">
-            <h2>馃嵆 鐑棬缇庨椋熻氨</h2>
+    <section class="section" id="cooking">
+        <div class="container">
+            <h2 class="section-title">🍳 Cooking & Recipes</h2>
             <div class="article-grid">
-                <article class="article-card">
-                    <div class="article-thumb">馃崫</div>
-                    <div class="article-body">
-                        <span class="article-tag">蹇墜鑿?/span>
-                        <span class="article-tag">20鍒嗛挓</span>
-                        <h4>鐣寗鐐掕泲鐨勬纭仛娉?/h4>
-                        <p>鎺屾彙杩欏嚑涓皬鎶€宸э紝鍋氬嚭鐨勭暘鑼勭倰铔嬮吀鐢滃彲鍙ｏ紝铔嬪姹佹祿锛屾瘮楗簵杩樺ソ鍚冦€?/p>
-                        <div class="article-meta">闃呰閲?1.2涓?路 鐐硅禐 856</div>
+                <article class="article">
+                    <div class="article-img">🍝</div>
+                    <div class="article-content">
+                        <span class="article-tag">Quick Meals</span>
+                        <span class="article-tag">20 Min</span>
+                        <h4>15-Minute Pasta Recipes for Busy Weeknights</h4>
+                        <p>Five delicious pasta dishes you can make in under 20 minutes. Perfect for when you're short on time but still want a home-cooked meal.</p>
+                        <div class="article-meta">By Sarah M. · 5 min read · 12.5K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">馃</div>
-                    <div class="article-body">
-                        <span class="article-tag">鍋ュ悍椁?/span>
-                        <span class="article-tag">浣庡崱</span>
-                        <h4>涓€鍛ㄥ噺鑴傞椋熻氨鍒嗕韩</h4>
-                        <p>涓冨ぉ涓嶉噸鏍风殑浣庡崱椋熻氨锛岃惀鍏诲潎琛″張濂藉悆锛屽府浣犺交鏉炬帶鍒朵綋閲嶃€?/p>
-                        <div class="article-meta">闃呰閲?9800 路 鐐硅禐 723</div>
+                <article class="article">
+                    <div class="article-img">🥗</div>
+                    <div class="article-content">
+                        <span class="article-tag">Healthy</span>
+                        <span class="article-tag">Low-Cal</span>
+                        <h4>Meal Prep Guide: 7 Healthy Lunches Under 400 Calories</h4>
+                        <p>Save time and eat healthy with these make-ahead lunch recipes. All under 400 calories and ready in under an hour of prep.</p>
+                        <div class="article-meta">By Mike T. · 8 min read · 9.2K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">馃嵃</div>
-                    <div class="article-body">
-                        <span class="article-tag">鐑樼剻</span>
-                        <span class="article-tag">鏂版墜鍙嬪ソ</span>
-                        <h4>闆跺け璐ユ垰椋庤泲绯曟暀绋?/h4>
-                        <p>璇︾粏姝ラ鍥捐В锛屼粠鏉愭枡鍑嗗鍒扮儰绠辨俯搴︼紝鎵嬫妸鎵嬫暀浣犲仛鍑哄畬缇庢垰椋庛€?/p>
-                        <div class="article-meta">闃呰閲?6500 路 鐐硅禐 512</div>
+                <article class="article">
+                    <div class="article-img">🍰</div>
+                    <div class="article-content">
+                        <span class="article-tag">Baking</span>
+                        <span class="article-tag">Beginner</span>
+                        <h4>No-Fail Chocolate Cake Recipe for Beginners</h4>
+                        <p>Never had a cake disaster again. This foolproof recipe with step-by-step photos guarantees perfect results every single time.</p>
+                        <div class="article-meta">By Emma L. · 6 min read · 8.7K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🍜</div>
+                    <div class="article-content">
+                        <span class="article-tag">Asian</span>
+                        <span class="article-tag">Easy</span>
+                        <h4>Easy Asian Noodles: 6 Recipes You Need to Try</h4>
+                        <p>From Thai pad see ew to Japanese yakisoba - master these noodle dishes at home with simple ingredients from your local grocery store.</p>
+                        <div class="article-meta">By David K. · 7 min read · 7.3K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🥩</div>
+                    <div class="article-content">
+                        <span class="article-tag">Protein</span>
+                        <span class="article-tag">Grilling</span>
+                        <h4>How to Cook the Perfect Steak Every Time</h4>
+                        <p>Master the art of cooking steak with this comprehensive guide. Learn the best cuts, temperatures, and techniques for restaurant-quality results.</p>
+                        <div class="article-meta">By Chef Tom · 10 min read · 15.1K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🥤</div>
+                    <div class="article-content">
+                        <span class="article-tag">Drinks</span>
+                        <span class="article-tag">Summer</span>
+                        <h4>10 Refreshing Summer Drinks You Can Make at Home</h4>
+                        <p>Beat the heat with these easy homemade beverages. From iced teas to fruit smoothies, stay cool and hydrated all summer long.</p>
+                        <div class="article-meta">By Lisa R. · 5 min read · 6.8K views</div>
                     </div>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="content-section" id="travel">
-            <h2>鉁堬笍 鏃呰鏀荤暐鎺ㄨ崘</h2>
+    <section class="section" id="travel" style="background: #fafafa;">
+        <div class="container">
+            <h2 class="section-title">✈️ Travel Guides</h2>
             <div class="article-grid">
-                <article class="article-card">
-                    <div class="article-thumb">馃彅锔?/div>
-                    <div class="article-body">
-                        <span class="article-tag">鍥藉唴娓?/span>
-                        <span class="article-tag">灏忎紬</span>
-                        <h4>浜戝崡灏忎紬鍙ら晣涓夋棩娓?/h4>
-                        <p>閬垮紑浜烘疆锛屾帰绱簯鍗楅偅浜涗綆璋冨張缇庝附鐨勫彜闀囷紝鎰熷彈鍘熸眮鍘熷懗鐨勬參鐢熸椿銆?/p>
-                        <div class="article-meta">闃呰閲?8500 路 鐐硅禐 634</div>
+                <article class="article">
+                    <div class="article-img">🏝️</div>
+                    <div class="article-content">
+                        <span class="article-tag">Beach</span>
+                        <span class="article-tag">Budget</span>
+                        <h4>Top 10 Affordable Beach Destinations in 2026</h4>
+                        <p>Discover stunning beach destinations that won't break the bank. Includes accommodation tips, best times to visit, and hidden gems.</p>
+                        <div class="article-meta">By Travel Team · 12 min read · 18.3K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">馃彇锔?/div>
-                    <div class="article-body">
-                        <span class="article-tag">娴疯竟</span>
-                        <span class="article-tag">澶忓</span>
-                        <h4>鍥藉唴鏈€缇庢捣宀涙帹鑽?/h4>
-                        <p>鐩樼偣鍥藉唴閭ｄ簺姘磋川娓呮緢銆佹矙婊╃粏鑵荤殑灏忎紬娴峰矝锛屽澶╁氨鍘昏繖閲岋紒</p>
-                        <div class="article-meta">闃呰閲?1.1涓?路 鐐硅禐 892</div>
+                <article class="article">
+                    <div class="article-img">🏔️</div>
+                    <div class="article-content">
+                        <span class="article-tag">Adventure</span>
+                        <span class="article-tag">Nature</span>
+                        <h4>Ultimate Guide to Hiking for Beginners</h4>
+                        <p>Everything you need to know before hitting the trails. Essential gear, safety tips, and the best beginner-friendly hikes near you.</p>
+                        <div class="article-meta">By Jake W. · 9 min read · 11.2K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">馃挵</div>
-                    <div class="article-body">
-                        <span class="article-tag">鐪侀挶鏀荤暐</span>
-                        <span class="article-tag">瀹炵敤</span>
-                        <h4>鏃呰鐪侀挶鍗佸ぇ鎶€宸?/h4>
-                        <p>鏈虹エ浣忓鎬庝箞璁㈡渶渚垮疁锛熸€庝箞鐢ㄦ渶灏戠殑閽辩帺寰楁渶寮€蹇冿紵杩欑瘒鏂囩珷鍛婅瘔浣犵瓟妗堛€?/p>
-                        <div class="article-meta">闃呰閲?1.5涓?路 鐐硅禐 1205</div>
+                <article class="article">
+                    <div class="article-img">🗼</div>
+                    <div class="article-content">
+                        <span class="article-tag">City</span>
+                        <span class="article-tag">Europe</span>
+                        <h4>5 Days in Tokyo: Complete First-Timer's Guide</h4>
+                        <p>Make the most of your Tokyo trip with this detailed 5-day itinerary. Covers top attractions, food spots, and transportation tips.</p>
+                        <div class="article-meta">By Yuki T. · 15 min read · 22.1K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">💰</div>
+                    <div class="article-content">
+                        <span class="article-tag">Budget</span>
+                        <span class="article-tag">Tips</span>
+                        <h4>How to Save Money on Flights: 15 Proven Tips</h4>
+                        <p>Learn insider tricks to find cheaper flights. From booking timing to hidden-city ticketing, save hundreds on your next trip.</p>
+                        <div class="article-meta">By Budget Travel · 8 min read · 25.6K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🎒</div>
+                    <div class="article-content">
+                        <span class="article-tag">Solo Travel</span>
+                        <span class="article-tag">Safety</span>
+                        <h4>Solo Travel Safety Guide: 25 Essential Tips</h4>
+                        <p>Traveling alone? Here's how to stay safe and confident. Includes destination recommendations for solo travelers.</p>
+                        <div class="article-meta">By Ana M. · 10 min read · 14.5K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🏨</div>
+                    <div class="article-content">
+                        <span class="article-tag">Accommodation</span>
+                        <span class="article-tag">Guide</span>
+                        <h4>Hotel vs Airbnb: How to Choose the Best Option</h4>
+                        <p>A detailed comparison to help you decide. When to book hotels, when to choose Airbnb, and how to get the best deals on both.</p>
+                        <div class="article-meta">By Booking Pro · 6 min read · 9.8K views</div>
                     </div>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="content-section" id="growth">
-            <h2>馃摎 涓汉鎴愰暱蹇冨緱</h2>
+    <section class="section" id="home-tips">
+        <div class="container">
+            <h2 class="section-title">🏠 Home & Living</h2>
             <div class="article-grid">
-                <article class="article-card">
-                    <div class="article-thumb">馃摉</div>
-                    <div class="article-body">
-                        <span class="article-tag">璇讳功</span>
-                        <h4>2026骞翠功鍗曟帹鑽?/h4>
-                        <p>绮鹃€?0鏈敼鍙樻垜浜虹敓鐨勫ソ涔︼紝娑电洊蹇冪悊瀛︺€佺粡娴庡銆佷紶璁扮瓑澶氫釜棰嗗煙銆?/p>
-                        <div class="article-meta">闃呰閲?7200 路 鐐硅禐 567</div>
+                <article class="article">
+                    <div class="article-img">📦</div>
+                    <div class="article-content">
+                        <span class="article-tag">Organization</span>
+                        <span class="article-tag">Declutter</span>
+                        <h4>30-Day Declutter Challenge: Transform Your Home</h4>
+                        <p>One small task each day to completely transform your living space. Printable checklist included. Start today!</p>
+                        <div class="article-meta">By Home Team · 5 min read · 19.2K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">鈴?/div>
-                    <div class="article-body">
-                        <span class="article-tag">鏃堕棿绠＄悊</span>
-                        <h4>濡備綍楂樻晥鍒╃敤鏃堕棿</h4>
-                        <p>鍒嗕韩鎴戠敤浜嗕笁骞寸殑鏃堕棿绠＄悊鏂规硶锛屾瘡澶╁鍑?灏忔椂鍋氳嚜宸卞枩娆㈢殑浜嬨€?/p>
-                        <div class="article-meta">闃呰閲?9300 路 鐐硅禐 756</div>
+                <article class="article">
+                    <div class="article-img">🌿</div>
+                    <div class="article-content">
+                        <span class="article-tag">Plants</span>
+                        <span class="article-tag">Beginner</span>
+                        <h4>10 Indoor Plants That Are Impossible to Kill</h4>
+                        <p>No green thumb? No problem. These low-maintenance plants thrive on neglect and purify your indoor air.</p>
+                        <div class="article-meta">By Plant Mom · 6 min read · 16.4K views</div>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-thumb">馃幆</div>
-                    <div class="article-body">
-                        <span class="article-tag">涔犳儻鍏绘垚</span>
-                        <h4>鍧氭寔鏃╄捣涓€骞寸殑鍙樺寲</h4>
-                        <p>浠庣潯鎳掕鍒版瘡澶?鐐硅捣搴婏紝鎴戠粡鍘嗕簡浠€涔堬紵鏃╄捣甯︽潵鐨勬敼鍙樿繙姣斾綘鎯宠薄鐨勫ぇ銆?/p>
-                        <div class="article-meta">闃呰閲?6800 路 鐐硅禐 534</div>
+                <article class="article">
+                    <div class="article-img">🧹</div>
+                    <div class="article-content">
+                        <span class="article-tag">Cleaning</span>
+                        <span class="article-tag">Hacks</span>
+                        <h4>Cleaning Hacks That Actually Work</h4>
+                        <p>20 cleaning tips using everyday household items. Save time and money while getting your home spotless.</p>
+                        <div class="article-meta">By Clean Queen · 7 min read · 21.3K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🎨</div>
+                    <div class="article-content">
+                        <span class="article-tag">Decor</span>
+                        <span class="article-tag">Budget</span>
+                        <h4>Small Apartment Decorating on a Budget</h4>
+                        <p>Make your small space feel bigger and beautiful without spending a fortune. Real tips from real apartments.</p>
+                        <div class="article-meta">By Design Team · 8 min read · 13.7K views</div>
                     </div>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="content-section" id="tips">
-            <h2>馃挕 瀹炵敤鐢熸椿鎶€宸?/h2>
-            <ul class="tips-list">
-                <li><strong>鍐扮鏀剁撼锛?/strong>鐢ㄩ€忔槑淇濋矞鐩掑垎绫诲瓨鏀撅紝璐翠笂鏃ユ湡鏍囩锛屽啀涔熶笉鎬曢鏉愯繃鏈熸氮璐广€?/li>
-                <li><strong>琛ｆ湇鍘绘笉锛?/strong>琛ｆ湇娌句笂娌规笉锛岀珛鍒荤敤娲楁磥绮炬秱鎶归潤缃?鍒嗛挓锛屽啀姝ｅ父娓呮礂鍗冲彲鍘婚櫎銆?/li>
-                <li><strong>鍘婚櫎寮傚懗锛?/strong>鍐扮鏈夊紓鍛筹紵鏀句竴纰楀皬鑻忔墦鎴栧挅鍟℃福锛?4灏忔椂鍚庡紓鍛冲叏鏃犮€?/li>
-                <li><strong>蹇€熻В鍐伙細</strong>鑲夌被鐢ㄤ繚椴滆瀵嗗皝锛屾场鍦ㄥ喎姘翠腑锛?0鍒嗛挓灏辫兘瑙ｅ喕锛屾瘮寰尝鐐夋洿濂姐€?/li>
-                <li><strong>鎵嬫満鐪佺數锛?/strong>鍏抽棴鍚庡彴鍒锋柊銆侀檷浣庡睆骞曚寒搴︺€佸紑鍚渷鐢垫ā寮忥紝缁埅鎻愬崌50%銆?/li>
-            </ul>
-        </section>
+    <section class="section" id="wellness" style="background: #fafafa;">
+        <div class="container">
+            <h2 class="section-title">💪 Wellness & Health</h2>
+            <div class="article-grid">
+                <article class="article">
+                    <div class="article-img">🏃</div>
+                    <div class="article-content">
+                        <span class="article-tag">Fitness</span>
+                        <span class="article-tag">Beginner</span>
+                        <h4>Start Running: A Complete Beginner's Guide</h4>
+                        <p>From couch to 5K with this step-by-step program. Includes training schedule, gear recommendations, and motivation tips.</p>
+                        <div class="article-meta">By Runner's Life · 10 min read · 17.8K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">😴</div>
+                    <div class="article-content">
+                        <span class="article-tag">Sleep</span>
+                        <span class="article-tag">Health</span>
+                        <h4>How to Get Better Sleep Tonight: 12 Science-Backed Tips</h4>
+                        <p>Struggling with sleep? These proven strategies will help you fall asleep faster and wake up refreshed.</p>
+                        <div class="article-meta">By Sleep Expert · 6 min read · 14.2K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🧘</div>
+                    <div class="article-content">
+                        <span class="article-tag">Mental Health</span>
+                        <span class="article-tag">Stress</span>
+                        <h4>5-Minute Morning Meditation for Busy People</h4>
+                        <p>Start your day right with this quick, effective meditation routine. Reduce stress and boost productivity in just 5 minutes.</p>
+                        <div class="article-meta">By Mindful Team · 4 min read · 11.5K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🍎</div>
+                    <div class="article-content">
+                        <span class="article-tag">Nutrition</span>
+                        <span class="article-tag">Guide</span>
+                        <h4>Simple Healthy Eating: A No-Nonsense Guide</h4>
+                        <p>Eat healthier without complicated diets or expensive foods. Practical tips you can start using today.</p>
+                        <div class="article-meta">By Nutrition Pro · 8 min read · 20.1K views</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <section class="cta-box">
-            <h3>鍠滄杩欎簺鍐呭鍚楋紵</h3>
-            <p>鍏虫敞鎴戜滑锛屾瘡鍛ㄦ洿鏂板疄鐢ㄧ殑鐢熸椿鎸囧崡锛屼竴璧疯鐢熸椿鍙樺緱鏇寸編濂姐€?/p>
-            <a href="#" class="cta-btn">浜嗚В鏇村</a>
+    <section class="section" id="tech">
+        <div class="container">
+            <h2 class="section-title">📱 Tech Tips</h2>
+            <div class="article-grid">
+                <article class="article">
+                    <div class="article-img">🔋</div>
+                    <div class="article-content">
+                        <span class="article-tag">Smartphone</span>
+                        <span class="article-tag">Battery</span>
+                        <h4>15 Ways to Extend Your Phone Battery Life</h4>
+                        <p>Is your phone dying by noon? These tips will help you get through the day and keep your battery healthy longer.</p>
+                        <div class="article-meta">By Tech Tips · 5 min read · 23.4K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">🔐</div>
+                    <div class="article-content">
+                        <span class="article-tag">Security</span>
+                        <span class="article-tag">Privacy</span>
+                        <h4>Online Security: Protect Yourself in 10 Simple Steps</h4>
+                        <p>Your complete guide to staying safe online. Password management, two-factor auth, and avoiding scams.</p>
+                        <div class="article-meta">By Security Pro · 7 min read · 15.6K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">💰</div>
+                    <div class="article-content">
+                        <span class="article-tag">Apps</span>
+                        <span class="article-tag">Savings</span>
+                        <h4>Best Free Apps That Will Save You Money</h4>
+                        <p>From budgeting to finding deals, these free apps put money back in your pocket. All tested and reviewed.</p>
+                        <div class="article-meta">By App Finder · 6 min read · 18.9K views</div>
+                    </div>
+                </article>
+                <article class="article">
+                    <div class="article-img">📚</div>
+                    <div class="article-content">
+                        <span class="article-tag">Productivity</span>
+                        <span class="article-tag">Work</span>
+                        <h4>Digital Organization: Clean Up Your Digital Life</h4>
+                        <p>Organize your files, emails, and digital workspace. Boost productivity and find everything in seconds.</p>
+                        <div class="article-meta">By Productivity Pro · 8 min read · 12.3K views</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta">
+            <h2>Want More Tips?</h2>
+            <p>Join thousands of readers who get weekly tips delivered to their inbox.</p>
+            <a href="#" class="cta-btn">Subscribe Free</a>
+        </div>
+
+        <section class="section" style="margin: 40px 0; background: white; border-radius: 15px; padding: 40px;">
+            <h2 class="section-title">💡 Quick Life Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>🍳 Non-Stick Pan Care</h4>
+                    <p>Never use metal utensils on non-stick pans. Hand wash with soft sponge to extend lifespan by years.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>👕 Remove Wrinkles Fast</h4>
+                    <p>Hang wrinkled clothes in the bathroom while showering. Steam removes wrinkles in 10 minutes.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📱 Free Up Phone Storage</h4>
+                    <p>Delete old screenshots and duplicate photos first. They usually take up several GB of space.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🏃 Stay Motivated</h4>
+                    <p>Put your workout clothes next to your bed. You're 3x more likely to exercise in the morning.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🧊 Ice Cube Hack</h4>
+                    <p>Freeze leftover wine in ice cube trays for cooking. Perfect for sauces and deglazing pans.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>💰 Track Every Expense</h4>
+                    <p>Write down every purchase for 30 days. You'll be surprised where your money actually goes.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🌿 Keep Herbs Fresh</h4>
+                    <p>Store fresh herbs like flowers in a glass of water. Cover loosely with a plastic bag. Lasts 2 weeks!</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📧 Email Efficiency</h4>
+                    <p>Check email only 3 times a day: morning, noon, and late afternoon. Boosts productivity by 25%.</p>
+                </div>
+            </div>
         </section>
     </div>
 
     <footer>
-        <div class="footer-nav">
-            <a href="#">鍏充簬鎴戜滑</a>
-            <a href="#">鑱旂郴鏂瑰紡</a>
-            <a href="#">闅愮鏀跨瓥</a>
-            <a href="#">浣跨敤鏉℃</a>
-        </div>
-        <div class="copyright">
-            <p>漏 2026 鐢熸椿缇庡鎸囧崡 路 鍙戠幇鏃ュ父鐢熸椿涓殑缇庡ソ</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <a href="#cooking">Cooking & Recipes</a>
+                    <a href="#travel">Travel Guides</a>
+                    <a href="#home-tips">Home & Living</a>
+                    <a href="#wellness">Wellness</a>
+                    <a href="#tech">Tech Tips</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular Articles</h4>
+                    <a href="#">Budget Travel Tips</a>
+                    <a href="#">Meal Prep Guide</a>
+                    <a href="#">Home Organization</a>
+                    <a href="#">Fitness for Beginners</a>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Write for Us</a>
+                    <a href="#">Advertise</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 LifeWise Guide. All rights reserved.</p>
+                <p style="margin-top: 8px; font-size: 0.8rem;">Made with ❤️ for better living</p>
+            </div>
         </div>
     </footer>
 </body>
